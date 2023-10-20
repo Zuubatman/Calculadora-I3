@@ -119,7 +119,7 @@ function App() {
       <h1>Calculadora de I3</h1>
       <div className="input"><h2 className = "letter">A:</h2><input type="number" onChange={handleChangeA}></input></div>
       <div className="input"><h2 className = "letter">B:</h2><input type="number" onChange={handleChangeB}></input></div>
-      <div className="input"><h2 className = "letter">C:</h2><input type="number" onChange={handleChangeC} className="input"></input></div>
+      <div className="input"><h2 className = "letter">C:</h2><input type="number" onChange={handleChangeC}></input></div>
       <div className="input"><h2 className = "letter">D:</h2><input type="number" onChange={handleChangeD}></input></div>
       <div className="input"><h2 className = "letter">FF:</h2><input type="number" onChange={handleChangeFF}></input></div>
 
