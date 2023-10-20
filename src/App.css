@@ -1,1 +1,17 @@
+.container{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
 
+.input{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+
+.letter{
+    padding-right: 0.5rem;
+}
