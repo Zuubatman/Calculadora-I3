@@ -8,13 +8,27 @@ function App() {
   const [D, setD] = useState(0);
   const [FF, setFF] = useState(0);
   const [I3, setI3] = useState(0.0);
+  const [mensagemA, setMensagemA] = useState("")
+  const [mensagemB, setMensagemB] = useState("")
+  const [mensagemC, setMensagemC] = useState("")
+  const [mensagemD, setMensagemD] = useState("")
+  const [mensagemFF, setMensagemFF] = useState("")
+
 
 
   const handleChangeA = (event) => {
     const aux = event.target.value;
     if (aux != "") {
-      setA(parseInt(event.target.value));
+      const aux2 = parseInt(event.target.value);
+      if(aux2 < 0) {
+        setMensagemA("Valor inválido");
+        setA(0)
+      } else {
+        setMensagemA("");
+        setA(aux2);
+      }
     } else {
+      setMensagemA("");
       setA(0);
     }
   }
@@ -22,8 +36,16 @@ function App() {
   const handleChangeB = (event) => {
     const aux = event.target.value;
     if (aux != "") {
-      setB(parseInt(event.target.value));
+      const aux2 = parseInt(event.target.value);
+      if(aux2 < 0) {
+        setMensagemB("Valor inválido");
+        setB(0)
+      } else {
+        setMensagemB("");
+        setB(aux2);
+      }
     } else {
+      setMensagemB("")
       setB(0);
     }
   }
@@ -31,8 +53,16 @@ function App() {
   const handleChangeC = (event) => {
     const aux = event.target.value;
     if (aux != "") {
-      setC(parseInt(event.target.value));
+      const aux2 = parseInt(event.target.value);
+      if(aux2 < 0) {
+        setMensagemC("Valor inválido");
+        setC(0)
+      } else {
+        setMensagemC("");
+        setC(aux2);
+      }
     } else {
+      setMensagemC("");
       setC(0);
     }
   }
@@ -40,8 +70,16 @@ function App() {
   const handleChangeD = (event) => {
     const aux = event.target.value;
     if (aux != "") {
-      setD(parseInt(event.target.value));
+      const aux2 = parseInt(event.target.value);
+      if(aux2 < 0) {
+        setMensagemD("Valor inválido");
+        setD(0)
+      } else {
+        setMensagemD("");
+        setD(aux2);
+      }
     } else {
+      setMensagemD("");;
       setD(0);
     }
   }
@@ -49,8 +87,16 @@ function App() {
   const handleChangeFF = (event) => {
     const aux = event.target.value;
     if (aux != "") {
-      setFF(parseInt(event.target.value));
+      const aux2 = parseInt(event.target.value);
+      if(aux2 < 0) {
+        setMensagemFF("Valor inválido");
+        setFF(0)
+      } else {
+        setMensagemFF("");
+        setFF(aux2);
+      }
     } else {
+      setMensagemFF("");
       setFF(0);
     }
   }
@@ -73,11 +119,13 @@ function App() {
       <h1>Calculadora de I3</h1>
       <div className="input"><h2 className = "letter">A:</h2><input type="number" onChange={handleChangeA}></input></div>
       <div className="input"><h2 className = "letter">B:</h2><input type="number" onChange={handleChangeB}></input></div>
-      <div className="input"><h2 className = "letter">C:</h2><input type="number" onChange={handleChangeC}></input></div>
+      <div className="input"><h2 className = "letter">C:</h2><input type="number" onChange={handleChangeC} className="input"></input></div>
       <div className="input"><h2 className = "letter">D:</h2><input type="number" onChange={handleChangeD}></input></div>
       <div className="input"><h2 className = "letter">FF:</h2><input type="number" onChange={handleChangeFF}></input></div>
 
       <h2>{A}A + {B}B + {C}C + {D}D + {FF}F = {I3.toFixed(2)}</h2>
+
+      {mensagemA || mensagemB || mensagemC || mensagemD || mensagemFF}
 
     </div>
   );
